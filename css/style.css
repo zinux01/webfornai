@@ -1,0 +1,528 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    cursor: url('img\cursor-icon-pink-3d-render-png.jpg'), auto;
+}
+
+header {
+    background-color: pink; /* Warna latar belakang pink */
+    padding: 20px; /* Memberi padding di dalam header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan halus untuk efek elegan */
+}
+
+nav {
+    text-align: center; /* Mengatur teks di tengah */
+}
+
+ul {
+    list-style-type: none; /* Menghilangkan bullet pada list */
+    padding: 0; /* Menghilangkan padding default */
+    margin: 0; /* Menghilangkan margin default */
+}
+
+li {
+    display: inline; /* Menampilkan item secara horizontal */
+    margin: 0 15px; /* Memberi jarak antar item */
+}
+
+a {
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    color: navy; /* Warna teks navy untuk kontras */
+    font-size: 1.2rem; /* Ukuran font yang sedikit lebih besar */
+    transition: color 0.3s; /* Animasi transisi saat hover */
+}
+
+a:hover {
+    color: darkred; /* Warna teks saat hover */
+}
+
+
+.hero {
+    background-image: url('img/couple-sunset.jpg'), url('../img/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h1, .hero h1 {
+    font-size: 4rem; /* Menggunakan ukuran dari hero pertama karena lebih besar */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Menambahkan efek shadow dari hero pertama */
+}
+
+.hero-content p, .hero p {
+    font-size: 1.5rem; /* Ukuran teks p sama, sehingga bisa digabungkan */
+    margin: 20px 0;
+}
+
+.hero-content a.btn, .hero .btn {
+    padding: 10px 20px;
+    background-color: #e74c3c; /* Warna tombol utama dari CSS kedua */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Menggunakan border-radius yang lebih besar dari CSS pertama */
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease; /* Menggunakan transisi dari CSS kedua */
+}
+
+.hero-content a.btn:hover, .hero .btn:hover {
+    transform: scale(1.1);
+    background-color: #ff1493; /* Menggunakan warna hover dari CSS pertama */
+}
+
+.romantic-quiz {
+    background-color: #ffe6e6; /* Light pink background for a romantic feel */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.romantic-quiz h2 {
+    font-size: 2rem;
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.question p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.question label {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-left: 10px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #ff5e6c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff2e3c;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #e74c3c;
+}
+
+/* Initial fade-in animation for the body */
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Fade-out animation triggered on link click */
+.fade-out {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+
+/* Animation keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation keyframes for fade-out effect */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Optionally, romantic color scheme */
+body.fade-in, body.fade-out {
+    background-color: #ffcccc; /* Soft pink background for romance */
+    transition: background-color 1s ease-in-out;
+}
+
+.hero-content h1 {
+    color: #000000; /* Romantic red for text */
+    transition: color 1s ease-in-out;
+}
+
+.hero-content p {
+    color: #000000; /* Deep red tone for paragraph */
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 20px;
+    background-color: #ff5e6c; /* Romantic pink button */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff2e3c;
+}
+
+
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 10px;
+    text-align: center;
+}
+
+.proposal button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.heart {
+    position: fixed;
+    font-size: 2rem;
+    color: red;
+    animation: fly 2s ease-in-out forwards;
+}
+
+@keyframes fly {
+    from { transform: translateY(0); }
+    to { transform: translateY(-500px); opacity: 0; }
+}
+
+.proposal {
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 182, 193, 0.8); /* Warna pink transparan */
+    width: 80%;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    backdrop-filter: blur(10px); /* Efek blur di belakang */
+    border: 2px solid #ff69b4; /* Warna border */
+}
+
+.proposal h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.proposal p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.proposal .btn {
+    background-color: #ff69b4;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.proposal .btn:hover {
+    background-color: #ff1493;
+}
+
+.romantic-quotes h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.romantic-quotes .quotes {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.romantic-quotes .quotes p {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.romantic-quotes .quotes p:last-child {
+    margin-bottom: 0;
+}
+
+.about {
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    cursor: url('path/to/heart-cursor.png'), auto;
+}
+
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 40px;
+}
+
+.timer {
+    background-color: rgba(255, 182, 193, 0.9); /* Warna pink lembut */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: center;
+    width: 80%; /* Lebar area timer */
+    max-width: 600px; /* Lebar maksimum */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.timer h3 {
+    margin-bottom: 10px;
+    color: #000000; /* Warna judul */
+}
+.memories {
+    margin-top: 1000px; /* Jarak antara timer dan memories */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background with opacity */
+    animation: fadeIn 0.5s; /* Fade-in animation */
+}
+
+.modal-content {
+    position: relative; /* Position relative for positioning close button */
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    animation: scaleIn 0.5s; /* Scale-in animation */
+}
+
+.modal-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.caption {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* Close button styles */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.7); }
+    to { transform: scale(1); }
+}
+
+/* Memories styles (unchanged) */
+.memories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.memory {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    position: relative; /* Allow positioning of child elements */
+    cursor: pointer; /* Pointer cursor for better UX */
+}
+
+.memory:hover {
+    transform: scale(1.05);
+}
+
+.memory h3 {
+    font-size: 1.5rem;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+.memory p {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+
+footer {
+    background-color: pink; /* Latar belakang pink */
+    color: navy; /* Warna font navy */
+    padding: 20px 0; /* Padding minimalis */
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    text-align: center; /* Konten diatur di tengah */
+    margin-bottom: 20px;
+}
+
+.footer-content h3 {
+    font-size: 1.5rem; /* Ukuran font lebih kecil */
+    margin-bottom: 5px; /* Jarak bawah lebih kecil */
+    color: navy; /* Warna font navy */
+}
+
+.footer-content p {
+    font-size: 1rem; /* Ukuran font lebih kecil untuk minimalis */
+    line-height: 1.5;
+    margin-bottom: 15px; /* Margin bawah lebih kecil */
+    color: navy;
+}
+
+.socials {
+    list-style: none; /* Menghilangkan bullet points */
+    padding: 0;
+    display: inline-block;
+}
+
+.socials li {
+    display: inline;
+    margin: 0 5px; /* Jarak antar ikon lebih kecil */
+}
+
+.socials li a img {
+    width: 20px; /* Ukuran ikon lebih kecil */
+    height: 20px;
+    filter: none; /* Ikon dengan warna asli */
+}
+
+.footer-bottom {
+    background-color: #f8d7da; /* Warna lebih cerah dari pink untuk bagian bawah */
+    padding: 10px 0;
+    color: navy; /* Warna font navy */
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem; /* Ukuran font lebih kecil */
+    color: navy;
+}
+
+.gallery {
+    padding: 50px;
+    text-align: center;
+}
+
+.gallery h2 {
+    color: navy;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.gallery-images {
+    display: flex;
+    flex-wrap: wrap; /* Membuat foto bisa dibungkus ke baris berikutnya */
+    justify-content: center; /* Menyelaraskan foto di tengah */
+}
+
+.polaroid {
+    background-color: pink; /* Warna latar belakang pink */
+    padding: 10px;
+    border: 5px solid #eaeaea;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px; /* Mengurangi margin agar lebih rapat */
+    width: calc(25% - 20px); /* Ukuran 4 foto dalam 1 baris */
+    text-align: center; /* Agar teks di bawah gambar rata tengah */
+}
+
+.polaroid img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.polaroid p {
+    margin-top: 10px;
+    color: navy;
+    font-size: 1.1rem;
+}

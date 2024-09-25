@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are you ready mrs. taylor?</title>
+    <link rel="shortcut icon" href="img/flower.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <body class="fade-in"> <!-- Added fade-in class to initiate animation -->
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="proposal.html">Proposal</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="proposal">
+        <h2>The Proposal</h2>
+        <p>Dear Naila Sayangku,</p>
+        <p>i may not be the first man in your life, but i want to be the last. i know i'm not the one who first made you feel loved, but i want to be the only one to make you feel loved to the core. 
+            i promise to treat you the way you want to be treated, and give you the respect you deserve. 
+            i promise to always be your lover and your friend. i will always pay attention and give you time. 
+            i promise to always share what's in my heart and on my mind. i just want to say that i love you, will always love you, and that you are the only person i'll ever love this much. 
+            how is it possible that a guy with my faults, my habbits, my sins, in every dawn, a silent wish for your voice. found an angel like you?
+            We've shared countless beautiful moments together. You've brought so much joy and light into my life. 
+            There's one thing left to ask: Will you be mine?</p>
+        <button class="btn" onclick="alert('Thanks, now youre mine and im yours')">Yes, I will!</button>
+    </section>
+    
+
+    <footer>
+        <div class="footer-content">
+            <h3>Romantic Proposal</h3>
+            <p>You deserve the best version of me my love</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Romantic Proposal | Designed with ❤️ by Daffa</p>
+        </div>
+    </footer>
+    
+    <!-- Audio player for background music -->
+    <audio autoplay loop>
+        <source src="i wanna be yours - dramatic violin interlude.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+    document.querySelector('.btn').addEventListener('click', function() {
+        for (let i = 0; i < 10; i++) {
+            let heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = '❤️';
+            document.body.appendChild(heart);
+            heart.style.left = `${Math.random() * 100}vw`;
+            setTimeout(() => heart.remove(), 2000);
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a');
+
+            // Adding fade-out effect before the page change
+            links.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const url = this.href;
+
+                    document.body.classList.add('fade-out');
+                    setTimeout(function() {
+                        window.location.href = url;
+                    }, 1000); // 1 second delay for the transition effect
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dear Naila Nabiila</title>
+    <link rel="shortcut icon" href="img\flower.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <body class="fade-in"> <!-- Added fade-in class to initiate animation -->
+        
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="proposal.html">Proposal</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>This is for Naila Nabiila</h1>
+            <p>Lemme introduce the real love you deserve</p>
+            <a href="about.html" class="btn">Start the Journey</a>
+        </div>
+    </section>
+    
+    <section class="romantic-quiz">
+        <h2>How Well Do You Know Me?</h2>
+        <div class="quiz-container">
+            <div class="question">
+                <p><strong>1. apa warna kesukaan aku?</strong></p>
+                <div>
+                    <label><input type="radio" name="q1" value="Benar"> "Biru"</label><br>
+                    <label><input type="radio" name="q1" value="Salah"> "Hitam seperti malika AkA Nigga"</label><br>
+                    <label><input type="radio" name="q1" value="Salah"> "warnain sendiri aja"</label><br>
+                </div>
+            </div>
+    
+            <div class="question">
+                <p><strong>2. Apa yang paling kamu sukai dari aku?</strong></p>
+                <div>
+                    <label><input type="radio" name="q2" value="Salah"> Nakal tapi tampan</label><br>
+                    <label><input type="radio" name="q2" value="Benar"> tahan lama</label><br>
+                    <label><input type="radio" name="q2" value="Salah"> lebih ganteng</label><br>
+                </div>
+            </div>
+    
+            <div class="question">
+                <p><strong>3. Kapan kamu tau kalo aku mencintaimu?</strong></p>
+                <div>
+                    <label><input type="radio" name="q3" value="Salah"> pas komen di tikok</label><br>
+                    <label><input type="radio" name="q3" value="Salah"> pas lahir</label><br>
+                    <label><input type="radio" name="q3" value="Benar"> pas pertama kali ketemu</label><br>
+                </div>
+            </div>
+    
+            <button class="btn" onclick="checkQuiz()">Submit Answers</button>
+            <p id="result"></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Romantic Proposal</h3>
+            <p>You deserve the best version of me my love</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Romantic Proposal | Designed with ❤️ by Daffa</p>
+        </div>
+    </footer>
+
+    <!-- Audio player for background music -->
+    <audio autoplay loop>
+        <source src="The Weeknd, Ariana Grande - Die For You (Remix  Lyric Video) (mp3cut.net).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+     <!-- JavaScript for page transition -->
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a');
+
+            // Adding fade-out effect before the page change
+            links.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const url = this.href;
+
+                    document.body.classList.add('fade-out');
+                    setTimeout(function() {
+                        window.location.href = url;
+                    }, 1000); // 1 second delay for the transition effect
+                });
+            });
+        });
+
+        function checkQuiz() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            
+            if (!q1 || !q2 || !q3) {
+                document.getElementById('result').innerText = "Please answer all questions!";
+                return;
+            }
+    
+            let score = 0;
+    
+            if (q1.value === "Benar") score++;
+            if (q2.value === "Benar") score++;
+            if (q3.value === "Benar") score++;
+    
+            if (score === 3) {
+                document.getElementById('result').innerText = "anjayyy bener semua coyyy";
+            } else if (score === 2) {
+                document.getElementById('result').innerText = "bener tapi kurang dikit lagi";
+            } else {
+                document.getElementById('result').innerText = "salah semua kociak, jawab lagi buru mwah kechups brutal";
+            }
+        }
+
+    </script>
+</body>
+</html>

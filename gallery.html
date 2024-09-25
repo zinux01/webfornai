@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery of Us</title>
+    <link rel="shortcut icon" href="img\flower.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <body class="fade-in"> <!-- Added fade-in class to initiate animation -->
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="proposal.html">Proposal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="music-section">
+        <audio autoplay loop>
+            <source src="Taylor Swift - Daylight (Official Audio) (mp3cut.net).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+    
+    <section class="gallery">
+        <h2>Our Beautiful Memories</h2>
+        <div class="gallery-images">
+            <div class="polaroid">
+                <img src="img/1st pap.jpg" alt="Memorable Moment 1">
+                <p>aku seneng banget kamu pertama kali ngepap ke aku outfit kamu</p>
+            </div>
+            <div class="polaroid">
+                <img src="img\1st date.jpg" alt="Memorable Moment 2">
+                <p>ITS OUR FIRST DATE!!!, you know? im so amaze with you, damn i love you!</p>
+            </div>
+            <div class="polaroid">
+                <img src="img\2nd pap.jpg" alt="Memorable Moment 3">
+                <p>first pap muka lucu kamuuuu, ga ekspek si bakalan lucu gituuu ke kiasjdiajwdadwa</p>
+            </div>
+            <div class="polaroid">
+                <img src="img/5th pap.jpg" alt="Memorable Moment 4">
+                <p>EMANG BOLEH SENGEPAP OUTFIT CHECK INI PADAHAL MASI PDKT??</p>
+            </div>
+            <div class="polaroid">
+                <img src="img/7th pap.jpg" alt="Memorable Moment 5">
+                <p>second date was amazinggggggg so muchhhhh, fuckkk ur lips so oawkodkoawjdiajwfijwa so fun maksudnya hehe (remake lagi yu)</p>
+            </div>
+            <div class="polaroid">
+                <img src="img/6th pap.jpg" alt="Memorable Moment 6">
+                <p>cie samaan outfitnya sama orang laen? wkwkwkwk. she is my independent woman!</p>
+            </div>
+            <div class="polaroid">
+                <img src="img/outfit 2.jpg" alt="Memorable Moment 7">
+                <p>seneng banget dapet pap outfit check sebelom ngampusss</p>
+            </div>
+            <div class="polaroid">
+                <img src="img/sama ami.jpg" alt="Memorable Moment 8">
+                <p>semoga sama ami ga di ulerin yaa sayanggkuu</p>
+            </div>
+            <div class="polaroid">
+                <img src="img\melet 2.jpg" alt="Memorable Moment 9">
+                <p>dia kepanasan gaiiss, lucu kann nailaku inii</p>
+            </div>
+            <div class="polaroid">
+                <img src="img\beli 1.jpg" alt="Memorable Moment 10">
+                <p>tiba tiba ngepap lagi di jalan dong sambil bawa mainann, how blushing i am??!!</p>
+            </div>
+            <div class="polaroid">
+                <img src="img\berangkat 1.jpg" alt="Memorable Moment 10">
+                <p>trus trus ngepap pas mau berangkat narii, kek lucu bangett anjenkkk</p>
+            </div>
+            <div class="polaroid">
+                <img src="img\nari 1.jpg" alt="Memorable Moment 10">
+                <p>aku ngeliat kamu gini aja seneng gimana kamu narinya, lebih seneng tauu, makasii yaa udaa ngabarinn</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Romantic Proposal</h3>
+            <p>You deserve the best version of me my love</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Romantic Proposal | Designed with ❤️ by Daffa</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript for page transition -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a');
+
+            // Adding fade-out effect before the page change
+            links.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const url = this.href;
+
+                    document.body.classList.add('fade-out');
+                    setTimeout(function() {
+                        window.location.href = url;
+                    }, 1000); // 1 second delay for the transition effect
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

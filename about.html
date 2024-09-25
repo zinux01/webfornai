@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="shortcut icon" href="img/flower.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <body class="fade-in"> <!-- Added fade-in class to initiate animation -->
+        
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="proposal.html">Proposal</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Audio player for background music -->
+    <audio autoplay loop>
+        <source src="best part (mp3cut.net).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <section class="about">
+        <h2>Our Journey Together</h2>
+        <p>Love is a journey, not a destination. Along the way, we've shared countless beautiful moments. Here's a look back at some of the most unforgettable memories we've created together:</p>
+        
+        <!-- Timer Section -->
+        <div class="timer">
+            <h3>Since we first talked on September 6, 2024</h3>
+            <div id="time"></div>
+        </div>
+
+        <!-- Memories Section -->
+        <div class="memories">
+            <div class="memory" data-photo="img\komen 1.jpg">
+                <h3>First time comment get replied on tiktok</h3>
+                <p>siapa sangka bakalan di reply balik, setelah lama mutualan as a friend di tiktok</p>
+            </div>
+            
+            <div class="memory" data-photo="img\ig 1.jpg">
+                <h3>First move into instagram?</h3>
+                <p>gengsi banget awalnya padahal bisa ke wa</p>
+            </div>
+            
+            <div class="memory" data-photo="img\wa 1.jpg">
+                <h3>after a long day, move to whatsapp</h3>
+                <p>untung gua di reply ga drytext, kalo drytext bisa ga lanjut ini</p>
+            </div>
+            
+            <div class="memory" data-photo="img\1st date.jpg">
+                <h3>The first meet</h3>
+                <p>and yup, this is how we meet for the first time, im freeze, confusing, blushing, amaze as fuck. like? we're on tiktok move to real life??</p>
+            </div>
+            
+            <div class="memory" data-photo="img\7th pap.jpg">
+                <h3>Our First kiss</h3>
+                <p>YASHHH SECOND DATE FEEL AMAZING SO MUCHHH!!!!</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Modal for displaying the photo -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img class="modal-image" id="modalImage" alt="Memory Photo">
+            <div class="caption" id="modalCaption"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Romantic Proposal</h3>
+            <p>You deserve the best version of me, my love.</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Romantic Proposal | Designed with ❤️ by Daffa</p>
+        </div>
+    </footer>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a');
+
+            // Adding fade-out effect before the page change
+            links.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const url = this.href;
+
+                    document.body.classList.add('fade-out');
+                    setTimeout(function() {
+                        window.location.href = url;
+                    }, 1000); // 1 second delay for the transition effect
+                });
+            });
+        });
+
+        function updateTime() {
+            const startDate = new Date('2024-09-06T00:00:00');
+            const now = new Date();
+            const diff = now - startDate;
+
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('time').innerHTML = `
+                ${years} Years, ${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds
+            `;
+        }
+
+        // Modal functionality
+        const modal = document.getElementById("photoModal");
+        const modalImage = document.getElementById("modalImage");
+        const modalCaption = document.getElementById("modalCaption");
+        const closeModal = document.getElementsByClassName("close")[0];
+
+        document.querySelectorAll('.memory').forEach(memory => {
+            memory.onclick = function() {
+                const photoPath = this.getAttribute('data-photo');
+                const captionText = this.querySelector('h3').innerText; // Get title for caption
+                modal.style.display = "block";
+                modalImage.src = photoPath;
+                modalCaption.innerText = captionText; // Set the caption
+            }
+        });
+
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime(); // Call it once immediately to set the initial value
+    </script>
+</body>
+</html>
